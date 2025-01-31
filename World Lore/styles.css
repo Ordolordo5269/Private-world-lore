@@ -1,0 +1,1107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600&display=swap');
+
+:root {
+  --primary-color: #4ca1af;
+  --glass-bg: rgba(0, 0, 0, 0.85);
+  --transition-speed: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estructura base */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: #dcdcdc;
+  overflow: hidden;
+}
+
+#map, #conflict-map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#conflict-map {
+    background: #0f172a;
+}
+
+/* Sidebar - Actualización estética */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    width: 500px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(76, 161, 175, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.open { left: 0; }
+#sidebar.show { transform: translateX(0); }
+#sidebar.hidden { display: none; }
+
+.sidebar-header {
+    padding: 25px;
+    background: rgba(76, 161, 175, 0.05);
+    border-bottom: 1px solid rgba(76, 161, 175, 0.2);
+    position: relative;
+}
+
+.country-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(76, 161, 175, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(76, 161, 175, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.close-button:hover {
+    background: #4ca1af66;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Secciones y toggles */
+.section-toggle {
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    padding: 15px 20px;
+    background: rgba(76, 161, 175, 0.05);
+    border: 1px solid rgba(76, 161, 175, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-toggle:hover {
+    background: rgba(76, 161, 175, 0.1);
+    transform: translateX(10px);
+}
+
+.section-toggle.active {
+    background: rgba(76, 161, 175, 0.15);
+    border-color: rgba(76, 161, 175, 0.3);
+}
+
+.section-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.section-toggle:hover svg {
+    transform: scale(1.1);
+}
+
+/* Submenú y contenido */
+.submenu {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submenu-content li {
+    padding: 12px 15px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(76, 161, 175, 0.1);
+    transition: all 0.3s ease;
+}
+
+.submenu-content li:hover {
+    background: rgba(76, 161, 175, 0.08);
+    transform: translateX(5px);
+}
+
+.submenu-content .label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.submenu-content .value {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Scrollbar personalizada */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(76, 161, 175, 0.3);
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(76, 161, 175, 0.5);
+}
+
+/* Animaciones de entrada */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.submenu-content li {
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+}
+
+.submenu-content li:nth-child(1) { animation-delay: 0.1s; }
+.submenu-content li:nth-child(2) { animation-delay: 0.2s; }
+.submenu-content li:nth-child(3) { animation-delay: 0.3s; }
+.submenu-content li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .section-toggle {
+        width: calc(100% - 30px);
+        margin: 8px 15px;
+        padding: 12px 15px;
+    }
+
+    .submenu {
+        padding: 0 15px;
+    }
+}
+
+/* Elementos de búsqueda - Manteniendo IDs originales */
+#country-search, #chatbot-search {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 12px 20px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#country-search {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#chatbot-search {
+  width: 320px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+#country-search:focus, #chatbot-search:focus {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(76, 161, 175, 0.4);
+}
+
+/* Top Bar - Conservando estructura original */
+#top-bar {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(76, 161, 175, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-speed);
+}
+
+/* News Feed - Manteniendo selectores */
+#news-list li {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(76, 161, 175, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#news-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Elementos específicos de la sidebar original */
+.section-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 8px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(76, 161, 175, 0.2);
+  transition: all 0.3s ease;
+}
+
+.section-toggle:hover {
+  background: rgba(76, 161, 175, 0.15);
+  transform: translateX(10px);
+}
+
+.submenu li {
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: transparent;
+  transition: all 0.3s ease;
+  list-style-type: none; /* Quitar los puntos de la lista */
+}
+
+.submenu li:hover {
+  background: rgba(76, 161, 175, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+  
+  #country-search, #chatbot-search {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+/* Mejoras estéticas adicionales */
+/* Añadido al final del archivo CSS existente */
+
+/* 1. Mejora de barras de desplazamiento */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* 2. Efectos de profundidad mejorados */
+#sidebar button, #toggle-bar-button {
+  box-shadow: 0 4px 20px rgba(76, 161, 175, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 3. Iconos en campos de búsqueda */
+#country-search, #chatbot-search {
+  padding-left: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234ca1af'%3E%3Cpath d='M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 12px 50%;
+  background-size: 20px;
+}
+
+/* 4. Mejora en items de noticias */
+#news-list li {
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+#news-list li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 90%;
+  height: 1px;
+  background: rgba(76, 161, 175, 0.1);
+  transform: translateX(-50%);
+}
+
+/* 5. Efecto de neón sutil */
+.sidebar-header {
+  position: relative;
+}
+
+.sidebar-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+  opacity: 0.3;
+}
+
+/* 6. Mejora de contraste */
+#sidebar p {
+  color: #c5c5c5;
+}
+
+/* 7. Ajustes móviles */
+@media (max-width: 768px) {
+  #country-search, #chatbot-search {
+    background-position: 10px 50%;
+    padding-left: 35px;
+  }
+  
+  #news-list li {
+    margin-bottom: 12px;
+    padding: 12px;
+  }
+}
+
+/* 8. Efecto de carga sutil */
+@keyframes subtle-glow {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.4; }
+}
+
+#news-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(76, 161, 175, 0.05) 50%, transparent 100%);
+  pointer-events: none;
+  animation: subtle-glow 2.5s infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#news-list li:hover::before {
+  opacity: 1;
+}
+
+/* Modificaciones específicas para la sidebar */
+/* Manteniendo todas las funcionalidades existentes */
+
+/* Botón de cierre mejorado */
+#sidebar button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(76, 161, 175, 0.9);
+  box-shadow: 0 0 20px rgba(76, 161, 175, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#sidebar button:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: #4ca1af;
+}
+
+/* Botón de cierre mejorado */
+.close-sidebar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(76, 161, 175, 0.9);
+  box-shadow: 0 0 20px rgba(76, 161, 175, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-sidebar:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: #4ca1af;
+}
+
+/* Mejora de los elementos del menú */
+.section-toggle {
+  position: relative;
+  padding: 18px 25px;
+  margin: 12px 0; /* Quitar margen derecho */
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(76, 161, 175, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.section-toggle::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0%;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.section-toggle:hover {
+  background: rgba(76, 161, 175, 0.1);
+  transform: translateX(15px);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-toggle:hover::before {
+  height: 70%;
+}
+
+/* Ítems del submenú mejorados */
+.submenu li {
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: transparent;
+  transition: all 0.3s ease;
+  list-style-type: none; /* Quitar los puntos de la lista */
+}
+
+.submenu li:hover {
+  background: rgba(76, 161, 175, 0.1);
+}
+
+/* Estado de checkboxes mejorado */
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(76, 161, 175, 0.5);
+  transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background: rgba(76, 161, 175, 0.15);
+  border-color: var(--primary-color);
+}
+
+/* Mejora de la jerarquía visual */
+#sidebar h2 {
+  margin-top: 30px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+#sidebar h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Ajuste de espaciado general */
+.sidebar-content {
+  padding: 15px 0;
+}
+
+/* Efecto de hover más suave para noticias */
+#news-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Manteniendo responsive design */
+@media (max-width: 768px) {
+  .section-toggle {
+    margin: 10px 15px 10px 0; /* Quitar margen derecho */
+    padding: 15px 20px;
+  }
+  
+  .submenu li {
+    padding: 12px 35px;
+    margin: 6px 15px 6px 0; /* Quitar margen derecho */
+  }
+  
+  #sidebar button {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Mejoras específicas para los items del menú */
+.section-toggle {
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 1rem 0.5rem 0; /* Quitar margen derecho */
+    border-radius: 10px;
+    background: rgba(76, 161, 175, 0.05);
+    border: 1px solid rgba(76, 161, 175, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: calc(100% - 2rem);
+}
+
+.section-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: #4ca1af;
+    transition: transform 0.3s ease;
+}
+
+.section-toggle span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #dcdcdc;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* Efectos hover */
+.section-toggle:hover {
+    background: rgba(76, 161, 175, 0.1);
+    transform: translateX(10px);
+    border-color: rgba(76, 161, 175, 0.3);
+}
+
+.section-toggle:hover svg {
+    transform: scale(1.1);
+    fill: #5cb8c6;
+}
+
+.section-toggle:hover span {
+    color: #fff;
+}
+
+/* Estado activo */
+.section-toggle.active {
+    background: rgba(76, 161, 175, 0.2);
+    border-color: #4ca1af;
+}
+
+.section-toggle.active svg {
+    fill: #4ca1af;
+}
+
+.section-toggle.active span {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Submenús */
+.submenu {
+    padding: 0.5rem 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-toggle.active + .submenu {
+    max-height: 1000px; /* Valor mayor al contenido máximo posible */
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Añadir esta regla para el contenido del submenú */
+.submenu-content {
+    opacity: 0;
+    transition: opacity 0.2s ease 0.1s;
+}
+
+.section-toggle.active + .submenu .submenu-content {
+    opacity: 1;
+}
+
+/* Íconos específicos */
+.section-toggle[data-section="economy"] svg {
+    fill: #4CAF50;
+}
+
+.section-toggle[data-section="politics"] svg {
+    fill: #F44336;
+}
+
+.section-toggle[data-section="population"] svg {
+    fill: #9C27B0;
+}
+
+.section-toggle[data-section="diplomacy"] svg {
+    fill: #FFC107;
+}
+
+/* Efecto de acordeón */
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.section-toggle.active + .submenu {
+    max-height: 500px; /* Ajustar según sea necesario */
+}
+
+/* Contenedor principal de estadísticas */
+.submenu-content {
+  display: grid;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Items individuales */
+.submenu-content li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 15px;
+  background: rgba(76, 161, 175, 0.05);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  list-style-type: none; /* Quitar los puntos de la lista */
+}
+
+.submenu-content li:hover {
+  background: rgba(76, 161, 175, 0.1);
+  transform: translateX(5px);
+}
+
+/* Etiquetas */
+.submenu-content .label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #7dd3fc;
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 24px;
+}
+
+.submenu-content .label::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Valores numéricos */
+.submenu-content .value {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  background: rgba(76, 161, 175, 0.15);
+  padding: 4px 12px;
+  border-radius: 15px;
+  margin-left: 10px;
+  border: 1px solid rgba(76, 161, 175, 0.3);
+}
+
+/* Efecto de acento lateral */
+.submenu-content li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.submenu-content li:hover::after {
+  opacity: 0.5;
+}
+
+/* Estilos específicos para diferentes categorías */
+[data-section="economy"] .value {
+  color: #4CAF50;
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+[data-section="politics"] .value {
+  color: #F44336;
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+[data-section="population"] .value {
+  color: #9C27B0;
+  border-color: rgba(156, 39, 176, 0.3);
+}
+
+[data-section="diplomacy"] .value {
+  color: #FFC107;
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+/* Mejora de jerarquía para listas largas */
+.submenu-content li:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Indicadores de porcentaje */
+.value::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .submenu-content {
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .submenu-content li {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px;
+  }
+  
+  .value {
+    align-self: flex-end;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación sutil al cargar */
+@keyframes itemEntry {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.submenu-content li {
+  animation: itemEntry 0.4s ease forwards;
+  opacity: 0;
+}
+
+.submenu-content li:nth-child(1) { animation-delay: 0.1s; }
+.submenu-content li:nth-child(2) { animation-delay: 0.2s; }
+.submenu-content li:nth-child(3) { animation-delay: 0.3s; }
+.submenu-content li:nth-child(4) { animation-delay: 0.4s; }
+
+/* Gráfico de exportaciones */
+.chart-container {
+    height: 250px;
+    padding: 15px !important;
+    margin: 20px 0 !important;
+    position: relative;
+}
+
+.chart-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #dcdcdc;
+    margin-bottom: 10px;
+}
+
+#exportsChart {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* Leyenda del gráfico */
+.chartjs-legend {
+    margin-top: 15px !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chartjs-legend li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #dcdcdc !important;
+    font-family: 'Inter' !important;
+}
+
+.chartjs-legend span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.chart-section {
+    background: rgba(76, 161, 175, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(76, 161, 175, 0.1);
+}
+
+.chart-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4ca1af;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(76, 161, 175, 0.2);
+}
+
+.chart-icon {
+    font-size: 1.4rem;
+}
+
+.chart-container {
+    height: 250px;
+    margin-top: 15px;
+    list-style: none;
+}
+
+/* Front Page Styles */
+.front-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 20px rgba(76, 161, 175, 0.4);
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+}
+
+.exploration-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.explore-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: #1e293b;
+    color: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(76, 161, 175, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.explore-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(76, 161, 175, 0.5);
+    background: #2a3a50;
+}
+
+.button-icon {
+    font-size: 1.4rem;
+}
+
+
+.features {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(76, 161, 175, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.feature-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .exploration-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .explore-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Botón de retorno a inicio */
+.return-home-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+.return-home-button:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+    box-shadow: 0 4px 15px rgba(76, 161, 175, 0.4);
+}
+
+.return-icon {
+    font-size: 1.2rem;
+}
+
+.return-text {
+    font-size: 0.9rem;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .return-home-button {
+        padding: 6px 12px;
+    }
+    
+    .return-text {
+        display: none;
+    }
+    
+    .return-icon {
+        font-size: 1.4rem;
+    }
+}

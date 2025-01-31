@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldLore - Global Explorer</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="js/conflict-mapper/styles.css">
+</head>
+<body>
+    <!-- Nueva sección de página de inicio -->
+    <div class="front-page" id="front-page">
+        <div class="hero-content">
+            <h1>WorldLore</h1>
+            <p class="subtitle">Explore the world through data</p>
+            <div class="exploration-buttons">
+                <button class="explore-button" onclick="startCountryExploration()">
+                    <span class="button-icon">🌍</span>
+                    Country Info
+                </button>
+                <button class="explore-button conflict-button" onclick="startConflictMap()">
+                    <span class="button-icon">⚔️</span>
+                    Conflict Mapper
+                </button>
+            </div>
+        </div>
+        <div class="features">
+            <div class="feature-card">
+                <span class="feature-icon">🌍</span>
+                <h3>Global Data</h3>
+                <p>Access detailed information about countries worldwide</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Statistics</h3>
+                <p>Visualize economic and social data in real time</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🤝</span>
+                <h3>Relations</h3>
+                <p>Discover connections between different nations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido existente -->
+    <div id="map" style="display: none;"></div>
+    <div id="conflict-map-container" style="display: none;">
+        <div id="conflict-map"></div>
+        <div class="conflict-legend-bar">
+            <div class="legend-indicators">
+                <div class="indicator-item">
+                    <span class="indicator war"></span>
+                    <span class="indicator-label">WAR</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator warm"></span>
+                    <span class="indicator-label">WARM</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator nato"></span>
+                    <span class="indicator-label">NATO</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator eu"></span>
+                    <span class="indicator-label">EU</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator brics"></span>
+                    <span class="indicator-label">BRICS</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator un"></span>
+                    <span class="indicator-label">UN</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator mercosur"></span>
+                    <span class="indicator-label">MERCOSUR</span>
+                </div>
+                <div class="indicator-item">
+                    <span class="indicator trade-gate"></span>
+                    <span class="indicator-label">TRADE GATE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <button class="close-button" aria-label="Close sidebar">&times;</button>
+            <h1 class="country-title">Country Explorer</h1>
+        </div>
+        <div class="sidebar-content">
+            <nav>
+                <ul>
+                    <li>
+                        <button class="section-toggle" data-section="economy">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor">
+                                <path d="M200-280v-280h80v280h-80Zm240 0v-280h80v280h-80ZM80-120v-80h800v80H80Zm600-160v-280h80v280h-80ZM80-640v-80l400-200 400 200v80H80Z"/>
+                            </svg>
+                            <span>Economy</span>
+                        </button>
+                        <ul class="submenu">
+                            <li class="submenu-content"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="section-toggle" data-section="politics">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor">
+                                <path d="M160-120v-80h480v80H160Zm226-194L160-540l84-86 228 226-86 86Zm254-254L414-796l86-84 226 226-86 86Z"/>
+                            </svg>
+                            <span>Politics</span>
+                        </button>
+                        <ul class="submenu">
+                            <li class="submenu-content"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="section-toggle" data-section="population">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor">
+                                <path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760Z"/>
+                            </svg>
+                            <span>Population</span>
+                        </button>
+                        <ul class="submenu">
+                            <li class="submenu-content"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="section-toggle" data-section="diplomacy">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" height="24" fill="currentColor">
+                                <path d="M200-80v-760h640l-80 200 80 200H280v360h-80Zm80-440h442l-48-120 48-120H280v240Z"/>
+                            </svg>
+                            <span>Diplomacy</span>
+                        </button>
+                        <ul class="submenu">
+                            <li class="submenu-content"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <button class="toggle-sidebar" aria-label="Toggle sidebar">&#x25B6;</button>
+    <input type="text" id="country-search" placeholder="Search country..." style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 300px; z-index: 1000;" />
+    <button id="return-home" class="return-home-button" onclick="returnToFrontPage()">
+        <span class="return-icon">🏠</span>
+        <span class="return-text">Home</span>
+    </button>
+    <div id="top-bar" style="display: none; height: calc(100% - 80px); border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <!-- Add the news feed section below the search bar -->
+        <div id="news-feed">
+            <ul id="news-list"></ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-treemap"></script>
+
+    <!-- Scripts de la aplicación -->
+    <script src="js/country-explorer/main.js"></script>
+    <script src="js/conflict-mapper/config.js"></script>
+    <script src="js/conflict-mapper/layers.js"></script>
+    <script src="js/conflict-mapper/main.js"></script>
+</body>
+</html>
