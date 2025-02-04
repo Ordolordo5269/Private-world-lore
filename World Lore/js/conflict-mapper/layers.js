@@ -321,7 +321,7 @@ const conflictLayers = {
                 source: 'countries',
                 paint: {
                     'fill-color': 'transparent',
-                    'fill-outline-color': '#627BC1'
+                    'fill-outline-color': 'rgba(255,255,255,0.1)'
                 }
             });
 
@@ -497,64 +497,40 @@ const conflictLayers = {
 
     initializeOrganizationListeners: (map) => {
         const toggleOrganization = async (organization) => {
-            // Obtener datos de países
-            const response = await fetch('/data.json');
-            const data = await response.json();
-            
-            // Obtener el elemento indicador
-            const indicator = document.querySelector(`.indicator.${organization}`);
-            const isActive = indicator.classList.toggle('active');
-            
-            if (isActive) {
-                // Desactivar otras organizaciones activas
-                document.querySelectorAll('.indicator.active').forEach(el => {
-                    if (el !== indicator) {
-                        el.classList.remove('active');
-                    }
-                });
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                
+                const indicator = document.querySelector(`.indicator.${organization}`);
+                const isActive = indicator.classList.toggle('active');
+                
+                // Resetear todos los filtros primero
+                map.setPaintProperty('organization-layer', 'fill-opacity', 0);
 
-                // Filtrar países por organización
-                const memberCountries = data.countries
-                    .filter(country => {
-                        const orgs = country.diplomacy['International Organizations'];
-                        return orgs.includes(organization.toUpperCase());
-                    })
-                    .map(country => country.country);
+                if (isActive) {
+                    // 1. Corregir el filtro de organizaciones
+                    const members = data.countries
+                        .filter(country => 
+                            country.diplomacy["International Organizations"]
+                                .some(org => org.toLowerCase() === organization)
+                        )
+                        .map(country => country.country);
 
-                // Actualizar el mapa
-                map.setPaintProperty(
-                    'organization-layer',
-                    'fill-color',
-                    conflictLayers.colors[organization]
-                );
-                map.setPaintProperty(
-                    'organization-layer',
-                    'fill-opacity',
-                    0.5
-                );
-                map.setFilter(
-                    'organization-layer',
-                    ['in', ['get', 'ADMIN'], ['literal', memberCountries]]
-                );
-            } else {
-                // Limpiar la visualización
-                map.setPaintProperty(
-                    'organization-layer',
-                    'fill-opacity',
-                    0
-                );
-                map.setFilter(
-                    'organization-layer',
-                    ['in', ['get', 'ADMIN'], ['literal', []]]
-                );
+                    // 2. Aplicar estilos correctamente
+                    map.setPaintProperty('organization-layer', 'fill-color', conflictLayers.colors[organization]);
+                    map.setPaintProperty('organization-layer', 'fill-opacity', 0.3);
+                    map.setFilter('organization-layer', ['in', ['get', 'ADMIN'], ['literal', members]]);
+                }
+            } catch (error) {
+                console.error('Error loading organization data:', error);
             }
         };
 
-        // Añadir event listeners a los indicadores
+        // 3. Asegurar que los listeners se añaden correctamente
         ['nato', 'eu', 'brics', 'un', 'mercosur'].forEach(org => {
-            const indicator = document.querySelector(`.indicator.${org}`);
-            if (indicator) {
-                indicator.addEventListener('click', () => toggleOrganization(org));
+            const element = document.querySelector(`.indicator.${org}`);
+            if (element) {
+                element.addEventListener('click', () => toggleOrganization(org));
             }
         });
     }

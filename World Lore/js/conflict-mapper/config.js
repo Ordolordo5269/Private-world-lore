@@ -1,6 +1,6 @@
 const conflictMapConfig = {
     mapboxToken: 'pk.eyJ1IjoiYW5kcmVzb29kIiwiYSI6ImNtNWNtMmd4dzJlZmQybXFyMGJuMDFxemsifQ.t4UlHVJhUi9ntjG5Tiq5_A',
-    style: 'mapbox://styles/mapbox/light-v11',
+    style: 'mapbox://styles/mapbox/dark-v10',
     initialView: {
         center: [0, 20],
         zoom: 2,

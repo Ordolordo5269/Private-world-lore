@@ -66,4 +66,53 @@ document.querySelector('.return-home-button').addEventListener('click', () => {
     countryMapElement.style.display = 'none';
     conflictMapContainer.style.display = 'none';
     returnButton.style.display = 'none';
-}); 
+});
+
+// Una vez que el DOM esté cargado, configuramos el toggle de la pestaña derecha
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('toggle-right-tab');
+    const rightTab = document.getElementById('conflict-right-tab');
+    if (toggleBtn && rightTab) {
+        toggleBtn.addEventListener('click', () => {
+            rightTab.classList.toggle('open');
+            if (rightTab.classList.contains('open')) {
+                // Cada vez que se abre la pestaña, se carga el feed de noticias
+                loadNewsFeed();
+            }
+        });
+    }
+});
+
+// Función para cargar el feed de noticias desde NewsAPI.org
+function loadNewsFeed() {
+    const url = 'https://newsapi.org/v2/top-headlines?q=foreign&apiKey=293aef4458c249c29d718a7664779a30';
+    console.log("Cargando noticias desde:", url);
+    
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const articles = data.articles;
+            console.log("Artículos recibidos:", articles);
+            let html = "";
+            articles.forEach(article => {
+                html += `<div class="news-item">
+                            <h4>${article.title}</h4>
+                            <p>${article.description ? article.description : ""}</p>
+                            <a href="${article.url}" target="_blank">Leer más</a>
+                         </div>`;
+            });
+            if (!articles.length) {
+                html = "<p>No se han encontrado noticias.</p>";
+            }
+            document.getElementById("news-feed-right-tab").innerHTML = html;
+        })
+        .catch(error => {
+            console.error("Error al cargar noticias:", error);
+            document.getElementById("news-feed-right-tab").innerHTML = "<p>Error al cargar noticias.</p>";
+        });
+} 

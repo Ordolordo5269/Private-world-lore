@@ -46,42 +46,40 @@
 
     <!-- Contenido existente -->
     <div id="map" style="display: none;"></div>
-    <div id="conflict-map-container" style="display: none;">
+    <div id="conflict-map-container">
         <div id="conflict-map"></div>
         <div class="conflict-legend-bar">
-            <div class="legend-indicators">
-                <div class="indicator-item">
-                    <span class="indicator war"></span>
-                    <span class="indicator-label">WAR</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator warm"></span>
-                    <span class="indicator-label">WARM</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator nato"></span>
-                    <span class="indicator-label">NATO</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator eu"></span>
-                    <span class="indicator-label">EU</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator brics"></span>
-                    <span class="indicator-label">BRICS</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator un"></span>
-                    <span class="indicator-label">UN</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator mercosur"></span>
-                    <span class="indicator-label">MERCOSUR</span>
-                </div>
-                <div class="indicator-item">
-                    <span class="indicator trade-gate"></span>
-                    <span class="indicator-label">TRADE GATE</span>
-                </div>
+            <h1>Conflict Mapper</h1>
+            <div class="legend-section">
+                <h3>Active Zones</h3>
+                <ol class="legend-list">
+                    <li><span class="indicator war"></span> War</li>
+                    <li><span class="indicator warm"></span> Warm</li>
+                </ol>
+            </div>
+            <div class="legend-section">
+                <h3>Alliances</h3>
+                <ol class="legend-list">
+                    <li><span class="indicator nato"></span> NATO</li>
+                    <li><span class="indicator eu"></span> EU</li>
+                    <li><span class="indicator brics"></span> BRICS</li>
+                    <li><span class="indicator un"></span> UN</li>
+                    <li><span class="indicator mercosur"></span> MERCOSUR</li>
+                </ol>
+            </div>
+            <div class="legend-section">
+                <h3>Trade Gates</h3>
+                <ol class="legend-list">
+                    <li><span class="indicator trade-gate"></span> Straits</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Nueva pestaña desplegable a la derecha -->
+        <div class="conflict-right-tab" id="conflict-right-tab">
+            <button class="toggle-right-tab" id="toggle-right-tab" aria-label="Toggle panel">&#9776;</button>
+            <div class="right-tab-content">
+                <h3>The Latest News</h3>
+                <div id="news-feed-right-tab"></div>
             </div>
         </div>
     </div>
@@ -160,7 +158,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-treemap"></script>
 
     <!-- Scripts de la aplicación -->
-    <script src="js/country-explorer/main.js"></script>
     <script src="js/conflict-mapper/config.js"></script>
     <script src="js/conflict-mapper/layers.js"></script>
     <script src="js/conflict-mapper/main.js"></script>

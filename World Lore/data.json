@@ -1903,6 +1903,822 @@
         "International Organizations": ["EU", "UN", "NATO"],
         "Rivals": ["None"]
       }
+    },
+    {
+      "country": "Estonia",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "32 billion USD",
+        "GDP per Capita": "24,000 USD",
+        "Inflation": "4.5%",
+        "Currency": "Euro",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Machinery", "percentage": "18%"},
+          {"name": "Electronics", "percentage": "15%"},
+          {"name": "Wood Products", "percentage": "12%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "8.17",
+        "Political Parties": ["Reform Party", "Isamaa", "Center Party"],
+        "Ideological Spectrum": ["Center-Right", "Conservative", "Center"]
+      },
+      "population": {
+        "Population Density": "30 people per sq km",
+        "Urban/Rural Distribution": "69% Urban, 31% Rural",
+        "HDI": "0.883",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Finland", "Sweden", "Latvia"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Lithuania",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "60 billion USD",
+        "GDP per Capita": "21,000 USD",
+        "Inflation": "3.2%",
+        "Currency": "Euro",
+        "Major Imports": ["Machinery", "Mineral Products", "Chemicals"],
+        "Major Exports": [
+          {"name": "Mineral Products", "percentage": "15%"},
+          {"name": "Machinery", "percentage": "14%"},
+          {"name": "Food Products", "percentage": "12%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "7.96",
+        "Political Parties": ["Homeland Union", "Liberal Movement", "Social Democratic Party"],
+        "Ideological Spectrum": ["Center-Right", "Liberal", "Left"]
+      },
+      "population": {
+        "Population Density": "46 people per sq km",
+        "Urban/Rural Distribution": "67% Urban, 33% Rural",
+        "HDI": "0.873",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Poland", "Latvia", "Germany"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Latvia",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "37 billion USD",
+        "GDP per Capita": "19,000 USD",
+        "Inflation": "3.8%",
+        "Currency": "Euro",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Wood Products", "percentage": "18%"},
+          {"name": "Machinery", "percentage": "15%"},
+          {"name": "Textiles", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "7.81",
+        "Political Parties": ["New Unity", "KPV LV", "National Alliance"],
+        "Ideological Spectrum": ["Center-Right", "Populist", "Conservative"]
+      },
+      "population": {
+        "Population Density": "35 people per sq km",
+        "Urban/Rural Distribution": "67% Urban, 33% Rural",
+        "HDI": "0.852",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Estonia", "Lithuania", "Sweden"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Belarus",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "65 billion USD",
+        "GDP per Capita": "6,800 USD",
+        "Inflation": "5.2%",
+        "Currency": "Belarusian Ruble",
+        "Major Imports": ["Oil", "Natural Gas", "Machinery"],
+        "Major Exports": [
+          {"name": "Petroleum Products", "percentage": "25%"},
+          {"name": "Machinery", "percentage": "15%"},
+          {"name": "Chemicals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Presidential Republic",
+        "Democracy Index": "3.11",
+        "Political Parties": ["Belaya Rus", "Communist Party", "United Civil Party"],
+        "Ideological Spectrum": ["Authoritarian", "Left", "Center-Left"]
+      },
+      "population": {
+        "Population Density": "45 people per sq km",
+        "Urban/Rural Distribution": "77% Urban, 23% Rural",
+        "HDI": "0.817",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "Ukraine", "China"],
+        "International Organizations": ["UN", "CSTO", "EAEU"],
+        "Rivals": ["European Union (due to political tensions)"]
+      }
+    },
+    {
+      "country": "Romania",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "270 billion USD",
+        "GDP per Capita": "14,000 USD",
+        "Inflation": "4.1%",
+        "Currency": "Romanian Leu",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Vehicles", "percentage": "20%"},
+          {"name": "Machinery", "percentage": "15%"},
+          {"name": "Electronics", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "6.98",
+        "Political Parties": ["National Liberal Party", "Social Democratic Party", "Save Romania Union"],
+        "Ideological Spectrum": ["Center-Right", "Left", "Centrist"]
+      },
+      "population": {
+        "Population Density": "89 people per sq km",
+        "Urban/Rural Distribution": "54% Urban, 46% Rural",
+        "HDI": "0.817",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Hungary", "Germany", "United States"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Republic of Serbia",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "50 billion USD",
+        "GDP per Capita": "7,000 USD",
+        "Inflation": "3.0%",
+        "Currency": "Serbian Dinar",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Metals", "percentage": "20%"},
+          {"name": "Vehicles", "percentage": "15%"},
+          {"name": "Foods", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "5.52",
+        "Political Parties": ["Serbian Progressive Party", "Socialist Party", "Democratic Party"],
+        "Ideological Spectrum": ["Center-Right", "Left", "Centrist"]
+      },
+      "population": {
+        "Population Density": "93 people per sq km",
+        "Urban/Rural Distribution": "56% Urban, 44% Rural",
+        "HDI": "0.790",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "China", "Germany"],
+        "International Organizations": ["UN", "CEFTA"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "20 billion USD",
+        "GDP per Capita": "5,000 USD",
+        "Inflation": "2.0%",
+        "Currency": "Convertible Mark",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Metals", "percentage": "25%"},
+          {"name": "Furniture", "percentage": "15%"},
+          {"name": "Wood Products", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Federal Republic",
+        "Democracy Index": "4.88",
+        "Political Parties": ["SDA", "HDZ", "SNSD"],
+        "Ideological Spectrum": ["Ethnic-Based", "Center-Right", "Centrist"]
+      },
+      "population": {
+        "Population Density": "67 people per sq km",
+        "Urban/Rural Distribution": "51% Urban, 49% Rural",
+        "HDI": "0.755",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Croatia", "Serbia", "Turkey"],
+        "International Organizations": ["UN", "CEFTA"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Croatia",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "65 billion USD",
+        "GDP per Capita": "15,000 USD",
+        "Inflation": "3.5%",
+        "Currency": "Croatian Kuna",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Chemicals", "percentage": "20%"},
+          {"name": "Foods", "percentage": "15%"},
+          {"name": "Metals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "7.52",
+        "Political Parties": ["HDZ", "SDP", "Most"],
+        "Ideological Spectrum": ["Center-Right", "Left", "Centrist"]
+      },
+      "population": {
+        "Population Density": "72 people per sq km",
+        "Urban/Rural Distribution": "58% Urban, 42% Rural",
+        "HDI": "0.840",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Germany", "Italy", "Bosnia and Herzegovina"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Slovenia",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "55 billion USD",
+        "GDP per Capita": "26,000 USD",
+        "Inflation": "3.8%",
+        "Currency": "Euro",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Machinery", "percentage": "25%"},
+          {"name": "Vehicles", "percentage": "15%"},
+          {"name": "Chemicals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "8.05",
+        "Political Parties": ["SD", "MSZ", "LMGG"],
+        "Ideological Spectrum": ["Center-Left", "Center-Right", "Centrist"]
+      },
+      "population": {
+        "Population Density": "102 people per sq km",
+        "Urban/Rural Distribution": "50% Urban, 50% Rural",
+        "HDI": "0.901",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Austria", "Italy", "Croatia"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Montenegro",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "5 billion USD",
+        "GDP per Capita": "8,000 USD",
+        "Inflation": "2.5%",
+        "Currency": "Euro",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Aluminum", "percentage": "25%"},
+          {"name": "Foods", "percentage": "15%"},
+          {"name": "Metals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "6.23",
+        "Political Parties": ["DPS", "SNP", "Positive Montenegro"],
+        "Ideological Spectrum": ["Center-Right", "Left", "Centrist"]
+      },
+      "population": {
+        "Population Density": "46 people per sq km",
+        "Urban/Rural Distribution": "62% Urban, 38% Rural",
+        "HDI": "0.819",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Serbia", "Croatia", "Albania"],
+        "International Organizations": ["UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Albania",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "15 billion USD",
+        "GDP per Capita": "5,000 USD",
+        "Inflation": "2.0%",
+        "Currency": "Lek",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Energy", "percentage": "20%"},
+          {"name": "Metals", "percentage": "15%"},
+          {"name": "Foods", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "5.95",
+        "Political Parties": ["PS", "PD", "LSI"],
+        "Ideological Spectrum": ["Center-Left", "Center-Right", "Centrist"]
+      },
+      "population": {
+        "Population Density": "110 people per sq km",
+        "Urban/Rural Distribution": "58% Urban, 42% Rural",
+        "HDI": "0.758",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Italy", "United States", "Turkey"],
+        "International Organizations": ["UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Macedonia",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "13 billion USD",
+        "GDP per Capita": "6,000 USD",
+        "Inflation": "2.5%",
+        "Currency": "Denar",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Textiles", "percentage": "25%"},
+          {"name": "Metals", "percentage": "15%"},
+          {"name": "Foods", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "6.12",
+        "Political Parties": ["SDSM", "VMRO-DPMNE", "Besa Movement"],
+        "Ideological Spectrum": ["Center-Left", "Center-Right", "Centrist"]
+      },
+      "population": {
+        "Population Density": "82 people per sq km",
+        "Urban/Rural Distribution": "58% Urban, 42% Rural",
+        "HDI": "0.755",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Greece", "Serbia", "Albania"],
+        "International Organizations": ["UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Bulgaria",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "70 billion USD",
+        "GDP per Capita": "10,000 USD",
+        "Inflation": "4.0%",
+        "Currency": "Lev",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Metals", "percentage": "20%"},
+          {"name": "Vehicles", "percentage": "15%"},
+          {"name": "Foods", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "6.43",
+        "Political Parties": ["GERB", "Citizens for European Development of Bulgaria", "Movement for Rights and Freedoms"],
+        "Ideological Spectrum": ["Center-Right", "Centrist", "Ethnic-Based"]
+      },
+      "population": {
+        "Population Density": "65 people per sq km",
+        "Urban/Rural Distribution": "74% Urban, 26% Rural",
+        "HDI": "0.817",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Turkey", "Greece", "Romania"],
+        "International Organizations": ["EU", "UN", "NATO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Georgia",
+      "continent": "Eurasia",
+      "economy": {
+        "GDP": "18 billion USD",
+        "GDP per Capita": "4,500 USD",
+        "Inflation": "6.0%",
+        "Currency": "Lari",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Wine", "percentage": "20%"},
+          {"name": "Metals", "percentage": "15%"},
+          {"name": "Fertilizers", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "5.71",
+        "Political Parties": ["Georgian Dream", "United National Movement", "European Georgia"],
+        "Ideological Spectrum": ["Center-Right", "Centrist", "Liberal"]
+      },
+      "population": {
+        "Population Density": "65 people per sq km",
+        "Urban/Rural Distribution": "54% Urban, 46% Rural",
+        "HDI": "0.786",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["United States", "Turkey", "Ukraine"],
+        "International Organizations": ["UN", "Council of Europe"],
+        "Rivals": ["Russia (due to territorial disputes)"]
+      }
+    },
+    {
+      "country": "Azerbaijan",
+      "continent": "Eurasia",
+      "economy": {
+        "GDP": "45 billion USD",
+        "GDP per Capita": "4,500 USD",
+        "Inflation": "3.5%",
+        "Currency": "Manat",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Oil", "percentage": "50%"},
+          {"name": "Gas", "percentage": "20%"},
+          {"name": "Metals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Presidential Republic",
+        "Democracy Index": "3.17",
+        "Political Parties": ["YAP", "Musavat", "Popular Front Party"],
+        "Ideological Spectrum": ["Authoritarian", "Centrist", "Nationalist"]
+      },
+      "population": {
+        "Population Density": "115 people per sq km",
+        "Urban/Rural Distribution": "55% Urban, 45% Rural",
+        "HDI": "0.764",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Turkey", "Israel", "Russia"],
+        "International Organizations": ["UN", "OSCE"],
+        "Rivals": ["Armenia (due to Nagorno-Karabakh conflict)"]
+      }
+    },
+    {
+      "country": "Armenia",
+      "continent": "Eurasia",
+      "economy": {
+        "GDP": "14 billion USD",
+        "GDP per Capita": "4,500 USD",
+        "Inflation": "4.0%",
+        "Currency": "Dram",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Metals", "percentage": "50%"},
+          {"name": "Foods", "percentage": "15%"},
+          {"name": "Clothing", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "5.37",
+        "Political Parties": ["Civil Contract", "Prosperous Armenia", "Bright Armenia"],
+        "Ideological Spectrum": ["Centrist", "Populist", "Liberal"]
+      },
+      "population": {
+        "Population Density": "101 people per sq km",
+        "Urban/Rural Distribution": "64% Urban, 36% Rural",
+        "HDI": "0.762",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "Iran", "Syria"],
+        "International Organizations": ["UN", "Council of Europe"],
+        "Rivals": ["Azerbaijan (due to Nagorno-Karabakh conflict)"]
+      }
+    },
+    {
+      "country": "Republic of Kosovo",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "8 billion USD",
+        "GDP per Capita": "4,000 USD",
+        "Inflation": "2.5%",
+        "Currency": "Euro",
+        "Major Imports": ["Machinery", "Vehicles", "Food Products"],
+        "Major Exports": [
+          {"name": "Metals", "percentage": "30%"},
+          {"name": "Minerals", "percentage": "20%"},
+          {"name": "Agricultural Products", "percentage": "15%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "4.50",
+        "Political Parties": ["PDK", "LDK", "Vetëvendosje"],
+        "Ideological Spectrum": ["Nationalist", "Centrist", "Populist"]
+      },
+      "population": {
+        "Population Density": "165 people per sq km",
+        "Urban/Rural Distribution": "43% Urban, 57% Rural",
+        "HDI": "0.703",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["United States", "Albania", "Turkey"],
+        "International Organizations": ["UN (partial recognition)"],
+        "Rivals": ["Serbia (due to territorial disputes)"]
+      }
+    },
+    {
+      "country": "Moldova",
+      "continent": "Europe",
+      "economy": {
+        "GDP": "10 billion USD",
+        "GDP per Capita": "2,800 USD",
+        "Inflation": "5.0%",
+        "Currency": "Leu",
+        "Major Imports": ["Machinery", "Oil", "Food Products"],
+        "Major Exports": [
+          {"name": "Wine", "percentage": "20%"},
+          {"name": "Clothing", "percentage": "15%"},
+          {"name": "Agricultural Products", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "5.12",
+        "Political Parties": ["Pro-European Coalition", "Socialist Party", "Shor Party"],
+        "Ideological Spectrum": ["Pro-European", "Socialist", "Centrist"]
+      },
+      "population": {
+        "Population Density": "124 people per sq km",
+        "Urban/Rural Distribution": "45% Urban, 55% Rural",
+        "HDI": "0.725",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Romania", "Ukraine", "European Union"],
+        "International Organizations": ["UN", "OSCE"],
+        "Rivals": ["Transnistria (due to territorial disputes)"]
+      }
+    },
+    {
+      "country": "Kazakhstan",
+      "continent": "Eurasia",
+      "economy": {
+        "GDP": "180 billion USD",
+        "GDP per Capita": "9,500 USD",
+        "Inflation": "6.5%",
+        "Currency": "Tenge",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Oil", "percentage": "50%"},
+          {"name": "Natural Gas", "percentage": "15%"},
+          {"name": "Metals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Presidential Republic",
+        "Democracy Index": "3.25",
+        "Political Parties": ["Nur Otan", "Ak Zhol", "Communist People's Party"],
+        "Ideological Spectrum": ["Authoritarian", "Centrist", "Left"]
+      },
+      "population": {
+        "Population Density": "7 people per sq km",
+        "Urban/Rural Distribution": "58% Urban, 42% Rural",
+        "HDI": "0.816",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "China", "Turkey"],
+        "International Organizations": ["UN", "EAEU", "CSTO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Uzbekistan",
+      "continent": "Asia",
+      "economy": {
+        "GDP": "70 billion USD",
+        "GDP per Capita": "2,000 USD",
+        "Inflation": "10.0%",
+        "Currency": "Som",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Gold", "percentage": "25%"},
+          {"name": "Natural Gas", "percentage": "20%"},
+          {"name": "Cotton", "percentage": "15%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Presidential Republic",
+        "Democracy Index": "3.10",
+        "Political Parties": ["Liberal Democratic Party", "People's Democratic Party", "Adolat Social Democratic Party"],
+        "Ideological Spectrum": ["Authoritarian", "Centrist", "Conservative"]
+      },
+      "population": {
+        "Population Density": "74 people per sq km",
+        "Urban/Rural Distribution": "47% Urban, 53% Rural",
+        "HDI": "0.711",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "China", "Turkey"],
+        "International Organizations": ["UN", "CIS"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Kyrgyzstan",
+      "continent": "Asia",
+      "economy": {
+        "GDP": "9 billion USD",
+        "GDP per Capita": "1,500 USD",
+        "Inflation": "5.0%",
+        "Currency": "Som",
+        "Major Imports": ["Machinery", "Vehicles", "Food Products"],
+        "Major Exports": [
+          {"name": "Gold", "percentage": "40%"},
+          {"name": "Hydroelectricity", "percentage": "20%"},
+          {"name": "Cattle", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Parliamentary Republic",
+        "Democracy Index": "4.50",
+        "Political Parties": ["Mekenim Kyrgyzstan", "Respublika-Ata Jurt", "Bir Bol"],
+        "Ideological Spectrum": ["Centrist", "Populist", "Nationalist"]
+      },
+      "population": {
+        "Population Density": "34 people per sq km",
+        "Urban/Rural Distribution": "36% Urban, 64% Rural",
+        "HDI": "0.675",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "China", "United States"],
+        "International Organizations": ["UN", "CIS", "EAEU"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Tajikistan",
+      "continent": "Asia",
+      "economy": {
+        "GDP": "8 billion USD",
+        "GDP per Capita": "800 USD",
+        "Inflation": "7.0%",
+        "Currency": "Somoni",
+        "Major Imports": ["Machinery", "Vehicles", "Food Products"],
+        "Major Exports": [
+          {"name": "Aluminum", "percentage": "30%"},
+          {"name": "Cotton", "percentage": "20%"},
+          {"name": "Gold", "percentage": "15%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Presidential Republic",
+        "Democracy Index": "3.15",
+        "Political Parties": ["People's Democratic Party", "Socialist Party", "Islamic Renaissance Party"],
+        "Ideological Spectrum": ["Authoritarian", "Centrist", "Religious"]
+      },
+      "population": {
+        "Population Density": "59 people per sq km",
+        "Urban/Rural Distribution": "27% Urban, 73% Rural",
+        "HDI": "0.652",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "China", "Iran"],
+        "International Organizations": ["UN", "CIS", "SCO"],
+        "Rivals": ["None"]
+      }
+    },
+    {
+      "country": "Iran",
+      "continent": "Asia",
+      "economy": {
+        "GDP": "500 billion USD",
+        "GDP per Capita": "6,000 USD",
+        "Inflation": "40.0%",
+        "Currency": "Rial",
+        "Major Imports": ["Machinery", "Chemicals", "Transportation Equipment"],
+        "Major Exports": [
+          {"name": "Oil", "percentage": "50%"},
+          {"name": "Natural Gas", "percentage": "15%"},
+          {"name": "Petroleum Products", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Islamic Republic",
+        "Democracy Index": "3.00",
+        "Political Parties": ["Principlists", "Reformists"],
+        "Ideological Spectrum": ["Theocratic", "Conservative", "Moderate"]
+      },
+      "population": {
+        "Population Density": "53 people per sq km",
+        "Urban/Rural Distribution": "75% Urban, 25% Rural",
+        "HDI": "0.796",
+        "Healthcare Access": "Universal",
+        "Education Access": "Universal"
+      },
+      "diplomacy": {
+        "Key Allies": ["Russia", "China", "Syria"],
+        "International Organizations": ["UN", "NAM"],
+        "Rivals": ["United States, Israel (due to political tensions)"]
+      }
+    },
+    {
+      "country": "Afghanistan",
+      "continent": "Asia",
+      "economy": {
+        "GDP": "20 billion USD",
+        "GDP per Capita": "500 USD",
+        "Inflation": "15.0%",
+        "Currency": "Afghani",
+        "Major Imports": ["Machinery", "Vehicles", "Chemicals"],
+        "Major Exports": [
+          {"name": "Opium", "percentage": "30%"},
+          {"name": "Carpets", "percentage": "20%"},
+          {"name": "Precious Metals", "percentage": "10%"}
+        ]
+      },
+      "politics": {
+        "Political System": "Islamic Republic",
+        "Democracy Index": "3.00",
+        "Political Parties": ["National Islamic Movement", "Some Party"],
+        "Ideological Spectrum": ["Theocratic", "Authoritarian", "Moderate"]
+      },
+      "population": {
+        "Population Density": "60 people per sq km",
+        "Urban/Rural Distribution": "30% Urban, 70% Rural",
+        "HDI": "0.500",
+        "Healthcare Access": "Limited",
+        "Education Access": "Limited"
+      },
+      "diplomacy": {
+        "Key Allies": ["None"],
+        "International Organizations": ["UN"],
+        "Rivals": ["None"]
+      }
     }
   ]
 }

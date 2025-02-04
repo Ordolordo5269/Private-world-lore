@@ -9,6 +9,8 @@ let conflictMap = null;
  * @returns {Object} Instancia del mapa configurado
  */
 const initializeMap = () => {
+    // Limpiar el contenedor para asegurar que esté vacío
+    document.getElementById('map').innerHTML = "";
     // Inicializar el mapa de países
     countryMap = new mapboxgl.Map({
         container: 'map',
@@ -27,7 +29,8 @@ const initializeMap = () => {
         visualizePitch: false
     }), 'bottom-right');
 
-    // Inicializar el mapa de conflictos
+    // Limpiar el contenedor del mapa de conflictos antes de inicializarlo
+    document.getElementById('conflict-map').innerHTML = "";
     conflictMap = new mapboxgl.Map({
         container: 'conflict-map',
         style: 'mapbox://styles/mapbox/dark-v11',
@@ -499,8 +502,6 @@ const createImportsChart = (importsData) => {
 const map = initializeMap();
 addCountryLayer(map);
 searchCountry(map);
-toggleTopBar();
-loadNewsFeed();
 
 function startCountryExploration() {
     const frontPage = document.getElementById('front-page');
@@ -563,7 +564,4 @@ function returnToFrontPage() {
         countryMap.setFilter('country-highlight', ['==', 'ADMIN', '']);
     }
 }
-
-console.error('Error loading country data:', error);
-console.error('Error loading map data:', error);
 
